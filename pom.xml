@@ -19,8 +19,21 @@
         <suite>regression</suite>
     </properties>
 
+    <!-- Pin Selenium to the line java-client 9.3.0 is built against; newer Selenium
+         releases removed interfaces (ContextAware, LocationContext) that it still uses. -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-bom</artifactId>
+                <version>4.26.0</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
-        <!-- Brings in a compatible Selenium 4 version transitively -->
         <dependency>
             <groupId>io.appium</groupId>
             <artifactId>java-client</artifactId>
