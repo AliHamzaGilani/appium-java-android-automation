@@ -1,0 +1,8 @@
+target/
+apps/
+*.apk
+appium.log
+.idea/
+*.iml
+.vscode/
+.DS_Store
